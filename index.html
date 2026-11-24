@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ärendelistan</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Ärendelistan</h1>
+
+      <form id="ticket-form">
+        <label>
+          Titel
+          <input name="title" maxlength="100" required />
+        </label>
+        <label>
+          Prioritet
+          <select name="priority">
+            <option value="low">Låg</option>
+            <option value="normal" selected>Normal</option>
+            <option value="high">Hög</option>
+          </select>
+        </label>
+        <button>Skapa ärende</button>
+      </form>
+
+      <p id="message" role="status"></p>
+      <ul id="ticket-list"></ul>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

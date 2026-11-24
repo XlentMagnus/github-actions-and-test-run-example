@@ -1,0 +1,33 @@
+name: CI
+
+# Körs vid varje push till main och vid varje pull request
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Minsta möjliga rättigheter: workflowet får bara läsa koden
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta koden
+        uses: actions/checkout@v7
+
+      - name: Installera Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Installera beroenden
+        run: npm ci
+
+      - name: Kör testerna (samma kommando som lokalt)
+        run: npm test
+
+      - name: Bygg frontend
+        run: npm run build
