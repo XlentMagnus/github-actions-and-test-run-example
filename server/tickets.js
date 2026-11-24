@@ -1,7 +1,7 @@
 // Affärslogik för ärenden. Ren logik utan HTTP – därför lätt att enhetstesta.
 
 export const MAX_TITLE_LENGTH = 100;
-export const PRIORITIES = ['low', 'normal', 'high'];
+export const PRIORITIES = ['low', 'normal'];
 
 // Kontrollerar indata. Returnerar en lista med fel (tom lista = giltigt).
 export function validateTicket(input) {
