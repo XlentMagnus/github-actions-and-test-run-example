@@ -44,7 +44,7 @@ eller ta bort `.trim()` på raden som börjar med `const title =` i `validateTic
 
 Kör `npm test` och se att testerna blir röda. Gör sedan samma ändring i en ny branch, pusha och öppna en pull request – då blir även körningen i GitHub Actions röd.
 
-## Struktur
+## Struktur 
 
 ```
 server/tickets.js          Logik för ärenden (det som testas)
